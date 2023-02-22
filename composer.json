@@ -1,0 +1,25 @@
+{
+    "name": "folyod/valuecore",
+    "description": "Value object realisation",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Folyod\\ValueCore\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Sorokin Ilya"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=8.2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.1@dev",
+        "phpstan/phpstan": "1.10.x-dev",
+        "squizlabs/php_codesniffer": "*"
+    }
+}
