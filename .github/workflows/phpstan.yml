@@ -1,4 +1,4 @@
-name: PHPStan
+name: Run static analysis
 
 on:
   pull_request:
