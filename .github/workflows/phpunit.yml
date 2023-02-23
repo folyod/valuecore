@@ -1,4 +1,4 @@
-name: "Php Unit"
+name: "Run tests"
 
 on:
   pull_request:
