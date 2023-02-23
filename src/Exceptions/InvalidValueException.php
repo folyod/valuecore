@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Folyod\ValueCore\Exceptions;
+namespace ValueCore\Exceptions;
 
 use Exception;
 

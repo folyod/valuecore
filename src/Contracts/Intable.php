@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Folyod\ValueCore\Contracts;
+namespace ValueCore\Contracts;
 
 interface Intable
 {

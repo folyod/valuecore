@@ -6,6 +6,7 @@ namespace ValueCore\Exceptions;
 
 use Exception;
 
-final class UnexpectStateException extends Exception
+final class InvalidConstraintInterfaceException extends Exception
 {
+
 }

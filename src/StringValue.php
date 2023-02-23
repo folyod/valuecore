@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Folyod\ValueCore;
+namespace ValueCore;
 
-use Folyod\ValueCore\Exceptions\InvalidValueException;
-use Folyod\ValueCore\Exceptions\UnexpectStateException;
+use ValueCore\Exceptions\InvalidValueException;
+use ValueCore\Exceptions\UnexpectStateException;
 use Stringable;
 
 abstract readonly class StringValue extends Value implements Stringable

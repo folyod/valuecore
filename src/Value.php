@@ -2,18 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Folyod\ValueCore;
+namespace ValueCore;
 
-use Folyod\ValueCore\Exceptions\InvalidValueException;
-use Folyod\ValueCore\State\ValueState;
+use ValueCore\Constraints\Constraints;
+use ValueCore\Exceptions\InvalidValueException;
 
 abstract readonly class Value
 {
-    private ValueState $state;
+    private Constraints $constraints;
 
-    public function __construct(mixed $value)
-    {
-        $this->state = new ValueState($value);
+    public function __construct(
+        private mixed $value,
+    ) {
+        $this->constraints = new Constraints($this->constraints());
     }
 
     /**
@@ -21,7 +22,11 @@ abstract readonly class Value
      */
     public function value(): mixed
     {
-        return $this->state->value();
+        if ($error = $this->validate()) {
+            throw new InvalidValueException($error);
+        }
+
+        return $this->value;
     }
 
     /**
@@ -29,6 +34,20 @@ abstract readonly class Value
      */
     public function equal(Value $value): bool
     {
-        return $this->value() === $value->value();
+        return $this->value() === $value->value()
+            && static::class === $value::class;
+    }
+
+    public function validate(): ?string
+    {
+        return $this->constraints->validate($this->value);
+    }
+
+    /**
+     * @return array<callable(mixed $value): string>
+     */
+    protected function constraints(): array
+    {
+        return [];
     }
 }

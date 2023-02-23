@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Folyod\ValueCore;
+namespace ValueCore;
 
-use Folyod\ValueCore\Contracts\Intable;
-use Folyod\ValueCore\Exceptions\InvalidValueException;
-use Folyod\ValueCore\Exceptions\UnexpectStateException;
+use ValueCore\Contracts\Intable;
+use ValueCore\Exceptions\InvalidValueException;
+use ValueCore\Exceptions\UnexpectStateException;
 
 abstract readonly class IntegerValue extends Value implements Intable
 {
@@ -19,7 +19,7 @@ abstract readonly class IntegerValue extends Value implements Intable
         $value = parent::value();
         if (! is_int($value)) {
             throw new UnexpectStateException(sprintf(
-                'The value must be a integer, %s given',
+                'The value must be an integer, %s given',
                 gettype($value)
             ));
         }
