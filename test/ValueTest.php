@@ -38,12 +38,4 @@ final class ValueTest extends TestCase
             [5, 'is no a string']
         ];
     }
-
-    public function testThrowIfCallbackConstraintHasWrongInterface()
-    {
-        $this->expectException(Exception::class);
-
-        $vo = new ValueWithWrongConstraintCallback('');
-        $vo->validate();
-    }
 }

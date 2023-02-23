@@ -5,7 +5,7 @@ on:
   push:
 
 jobs:
-  run-tests:
+  phpunit:
     name: Run tests
 
     strategy:
